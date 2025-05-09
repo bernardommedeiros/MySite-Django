@@ -1,0 +1,15 @@
+{% extends 'energy_bill/base.html' %}
+
+{% block content %}
+
+    <form action="{% url 'bill_calculate' %}" method="POST">
+        {%  csrf_token %}
+
+        <label for="kwh"> Indique seu consumo em quilowatt-hora (kWh):</label> <br>
+        <input  name="kwh" placeholder="Ex: 250" required>
+
+        <button> Confirmar </button>
+
+    </form>
+
+{% endblock content%}

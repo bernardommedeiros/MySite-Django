@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('mainpage.urls')),
     path('imc/', include('imc_calculator.urls')),
     path('poll/', include('poll.urls')),
+    path('energy/', include('energy_bill.urls')),
 ]

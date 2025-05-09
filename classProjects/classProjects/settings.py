@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'imc_calculator',
     'poll',
     'mainpage',
+    'energy_bill',
 ]
 
 MIDDLEWARE = [

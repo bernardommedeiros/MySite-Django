@@ -3,28 +3,28 @@
 
     <h1> Enquete - <strong>Esportes</strong> </h1>
 
-    <form action="/enquete/resultado/" method="POST">
-    {% csrf_token %}  <!-- Apenas se estiver usando Django -->
+    <form action="{% url 'vote_result' %}" method="POST">
+    {% csrf_token %} 
 
     <h2>Qual sua Esporte de programação favorita?</h2>
 
     <label>
-        <input type="radio" name="esporte" value="Futebol" required>
+        <input type="radio" name="sport" value="Futebol" required>
         Futebol
     </label>
 
     <label>
-        <input type="radio" name="esporte" value="Basquete">
+        <input type="radio" name="sport" value="Basquete">
         Basquete
     </label>
 
     <label>
-        <input type="radio" name="esporte" value="Natação">
+        <input type="radio" name="sport" value="Natação">
         Natação
     </label>
 
     <label>
-        <input type="radio" name="esporte" value="Vôlei">
+        <input type="radio" name="sport" value="Vôlei">
         Vôlei
     </label>
 
