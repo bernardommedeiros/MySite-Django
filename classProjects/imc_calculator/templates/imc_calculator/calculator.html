@@ -1,0 +1,17 @@
+{% extends 'imc_calculator/base.html' %}
+{% block content %}
+
+    <form action="{% url 'imc_calculate' %}" method="POST">
+        {%  csrf_token %}
+
+        <label for="peso"> Peso (kg):</label>
+        <input  name="peso" placeholder="Ex: 65.9" required>
+
+        <label for="altura"> Altura (m):</label>
+        <input name="altura" placeholder="Ex: 1. 89" required>
+
+        <button> Confirmar </button>
+
+    </form>
+
+{% endblock content %}

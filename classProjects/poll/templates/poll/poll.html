@@ -1,0 +1,38 @@
+{% extends 'poll/base.html' %}
+{% block content %}
+
+    <h1> Enquete - <strong>Esportes</strong> </h1>
+
+    <form action="/enquete/resultado/" method="POST">
+    {% csrf_token %}  <!-- Apenas se estiver usando Django -->
+
+    <h2>Qual sua Esporte de programação favorita?</h2>
+
+    <label>
+        <input type="radio" name="esporte" value="Futebol" required>
+        Futebol
+    </label>
+
+    <label>
+        <input type="radio" name="esporte" value="Basquete">
+        Basquete
+    </label>
+
+    <label>
+        <input type="radio" name="esporte" value="Natação">
+        Natação
+    </label>
+
+    <label>
+        <input type="radio" name="esporte" value="Vôlei">
+        Vôlei
+    </label>
+
+    <br>
+
+    <button type="submit">Votar</button>
+</form>
+    
+    
+
+{% endblock content %}

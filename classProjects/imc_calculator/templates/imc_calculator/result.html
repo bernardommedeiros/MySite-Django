@@ -1,0 +1,9 @@
+{% extends 'imc_calculator/base.html' %}
+{% block content %}
+
+    <h1> Resultado do seu IMC </h1>
+    
+    <h2> {{ imc|floatformat:2 }} </h2>
+    <p> Você está {{ condition }} </p>
+
+{% endblock content %}
