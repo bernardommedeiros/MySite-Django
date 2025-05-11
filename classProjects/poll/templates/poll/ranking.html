@@ -1,0 +1,28 @@
+{% extends 'poll/base.html' %}
+{% block content %}
+
+    <h1> Resultado da Enquete - {{ question }} </h1>
+    <h2> Resultado parcial: </h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Opção</th>
+                <th>Votos</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for alternative,vote in result %}
+            
+            <tr>
+                <td>{{alternative}}</td>
+                <td>{{vote}}</td>
+            </tr>
+
+            {% endfor %}
+
+            
+        </tbody>
+    </table>
+{% endblock content %}

@@ -3,30 +3,18 @@
 
     <h1> Enquete - <strong>Esportes</strong> </h1>
 
-    <form action="{% url 'vote_result' %}" method="POST">
+    <h2> {{ question }} </h2>
+
+    <form action="{% url 'ranking' %}" method="POST">
     {% csrf_token %} 
 
-    <h2>Qual sua Esporte de programação favorita?</h2>
 
-    <label>
-        <input type="radio" name="sport" value="Futebol" required>
-        Futebol
-    </label>
-
-    <label>
-        <input type="radio" name="sport" value="Basquete">
-        Basquete
-    </label>
-
-    <label>
-        <input type="radio" name="sport" value="Natação">
-        Natação
-    </label>
-
-    <label>
-        <input type="radio" name="sport" value="Vôlei">
-        Vôlei
-    </label>
+     {% for alternative in alternatives %}
+            <label>
+                <input type="radio" name="option" value="{{ forloop.counter }}">
+                {{ alternative }}
+            </label><br>
+        {% endfor %}
 
     <br>
 

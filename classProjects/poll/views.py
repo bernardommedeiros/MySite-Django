@@ -1,20 +1,24 @@
-from django.shortcuts import render, redirect
-from .models import Sport
+from django.shortcuts import render
 
 # Create your views here.
+question = "Qual o melhor esporte?"
+alternatives = ["Futebol","Basquete","Vôlei", "Tênis"]
+votes = [0, 0, 0, 0]
 
 def poll_select(request):
-     return render (request, 'poll/poll.html')
- 
-def vote_result(request):
-    if request.method == 'POST':
-        choice = request.POST.get('sport')
-        sport = Sport.objects.get(name=choice)
-        sport.votes += 1
-        sport.save()
-        return redirect('ranking')
+    context = {'question': question, 
+               'alternatives': alternatives,
+               }
+    return render (request, 'poll/poll.html', context)
 
 def ranking(request):
-    sports = Sport.objects.all().order_by('-votes')
-    return render(request, 'poll/ranking.html', {'sports': sports})
+    option=int(request.POST.get('option'))
+    global votes
+    votes[option-1] += 1
+    result = zip(alternatives,votes)
+    context = {
+        'result': result,
+        'question': question,
+    }
+    return render(request, 'poll/ranking.html', context)
     
