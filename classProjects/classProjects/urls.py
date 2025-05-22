@@ -23,4 +23,6 @@ urlpatterns = [
     path('imc/', include('imc_calculator.urls')),
     path('poll/', include('poll.urls')),
     path('energy/', include('energy_bill.urls')),
+    path('loan/', include('bank_loan.urls')),
+    path('schedule/', include('study_schedule.urls')),
 ]

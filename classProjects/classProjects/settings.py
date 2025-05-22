@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'poll',
     'mainpage',
     'energy_bill',
+    'bank_loan',
+    'study_schedule',
 ]
 
 MIDDLEWARE = [

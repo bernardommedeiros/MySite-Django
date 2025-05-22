@@ -1,0 +1,25 @@
+{% extends 'bank_loan/base.html' %}
+
+{% block content %}
+
+    <form action="{% url 'loan_calculate' %}" method="POST">
+        {%  csrf_token %}
+
+        <label for="value"> Valor do emprestimo:</label>
+        <input name="value" placeholder="Ex: 100.000" required>
+
+        <br>
+
+        <label for="tax"> Juros mensal:</label>
+        <input name="tax" placeholder="Ex: 10%" required>
+
+        <br>
+
+        <label for="parcels"> Quantidade de parcelas:</label>
+        <input name="parcels" placeholder="Ex: 36" required>
+
+        <button> Confirmar </button>
+
+    </form>
+
+{% endblock content%}
