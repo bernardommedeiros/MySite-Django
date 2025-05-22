@@ -1,0 +1,23 @@
+{% extends 'study_schedule/base.html' %}
+
+{% block content %}
+
+  <form action="{% url 'schedule_generate' %}" method="POST">
+  {% csrf_token %}
+  <label>Tópicos de estudo (os separe com vírgulas):</label>
+  <input type="text" name="topics">
+
+  <p>Seleione os dias de disponibilidade:</p>
+  <label><input type="checkbox" name="days" value="Segunda"> Segunda</label>
+  <label><input type="checkbox" name="days" value="Terça"> Terça</label>
+  <label><input type="checkbox" name="days" value="Quarta"> Quarta</label>
+  <label><input type="checkbox" name="days" value="Quinta"> Quinta</label>
+  <label><input type="checkbox" name="days" value="Sexta"> Sexta</label>
+  <label><input type="checkbox" name="days" value="Sábado"> Sábado</label>
+  <label><input type="checkbox" name="days" value="Domingo"> Domingo</label>
+
+  <button type="submit"> Gere seu cronograma </button>
+</form>
+
+
+{% endblock content%}

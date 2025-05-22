@@ -1,0 +1,25 @@
+{% extends 'study_schedule/base.html' %}
+{% block content %}
+<div class="box m-6">
+  <h1 class="title has-text-centered mt-4 mb-5"> Cronograma de Estudos </h1>
+  <table class="table is-striped is-hoverable is-fullwidth">
+      <tr>
+        <th>Dias</th>
+        <th>Tópicos</th>
+      </tr>
+      {% for day, topics in schedule.items %}
+        <tr>
+          <td><strong>{{ day }}</strong></td>
+          <td>
+            <ul>
+              {% for topic in topics %}
+                <li>{{ topic }}</li>
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+</div>
+
+{% endblock content %}
