@@ -12,13 +12,14 @@ def poll_select(request):
     return render (request, 'poll/poll.html', context)
 
 def ranking(request):
-    option=int(request.POST.get('option'))
-    global votes
-    votes[option-1] += 1
-    result = zip(alternatives,votes)
-    context = {
-        'result': result,
-        'question': question,
-    }
+    if request.method == 'POST':
+        option=int(request.POST.get('option'))
+        global votes
+        votes[option-1] += 1
+        result = zip(alternatives,votes)
+        context = {
+            'result': result,
+            'question': question,
+        }
     return render(request, 'poll/ranking.html', context)
     

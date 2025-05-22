@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from . import services
 
 # Create your views here.
 def form_imc(request):
@@ -10,19 +11,8 @@ def imc_calculate(request):
         altura = float(request.POST.get('altura'))
         imc = peso / (altura * altura)
         
-        if imc < 18.5:
-            condition = 'abaixo do peso ideal'
-        elif imc >= 18.5 and imc <= 24.9:
-            condition = 'com o peso ideal'
-        elif imc >= 25 and imc <= 29.9:
-            condition = 'acima do peso ideal'
-        elif imc >= 30 and imc <= 34.9:
-            condition = 'com Obesidade Grau 1'
-        elif imc >= 35 and imc <= 39.9:
-            condition = 'com Obesidade Grau 2'
-        else:
-            condition = 'com Obesidade Mórbida'
-            
+        condition = services.get_condition(imc)   
+
         context = {
             'peso': peso,
             'altura': altura,
