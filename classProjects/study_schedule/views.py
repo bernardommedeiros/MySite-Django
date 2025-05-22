@@ -10,12 +10,12 @@ def schedule(request):
 def schedule_generate_result(request):
     if request.method == 'POST':
         selected_days = request.POST.getlist('days')
-        topics = request.POST.get('topics', '')
+        topics_raw = request.POST.get('topics', '')
 
-    schedule = services.schedule_generate(selected_days, topics)
+    schedule = services.schedule_generate(selected_days, topics_raw)
     
     context = {
-        'schedule': ordered_schedule
+        'schedule': schedule
     }
 
     return render(request, 'study_schedule/result.html', context)

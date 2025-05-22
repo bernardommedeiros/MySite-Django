@@ -1,4 +1,5 @@
-def schedule_generate(selected_days, topics):
+def schedule_generate(selected_days, topics_raw):
+    
     topics = [t.strip() for t in topics_raw.split(',')]
     days = [d.strip() for d in selected_days]
 
