@@ -1,4 +1,5 @@
 {% extends 'poll/base.html' %}
+{% load static %}
 {% block content %}
 
     <h1> Enquete - <strong>Esportes</strong> </h1>
@@ -18,9 +19,9 @@
 
     <br>
 
-    <button type="submit">Votar</button>
+    <button onclick="showMessage ('Voto enviado com sucesso')" type="submit">Votar</button>
 </form>
     
-    
+<script src={% static 'poll/js/msg.js' %}> </script>
 
 {% endblock content %}

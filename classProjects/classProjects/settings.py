@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'energy_bill',
     'bank_loan',
     'study_schedule',
+     'tailwind',
+     'theme',
 ]
 
 MIDDLEWARE = [
@@ -73,7 +75,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'classProjects.wsgi.application'
-
+TAILWIND_APP_NAME = 'theme'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases

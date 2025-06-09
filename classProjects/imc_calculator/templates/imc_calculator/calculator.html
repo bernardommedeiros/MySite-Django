@@ -1,4 +1,5 @@
 {% extends 'imc_calculator/base.html' %}
+{% load static %}
 {% block content %}
 
     <form action="{% url 'imc_calculate' %}" method="POST">
@@ -10,8 +11,10 @@
         <label for="altura"> Altura (m):</label>
         <input name="altura" placeholder="Ex: 1. 89" required>
 
-        <button> Confirmar </button>
+        <button type="submit"> Confirmar </button>
 
     </form>
+    
+    <script src="{% static 'imc_calculator/js/result.js' %}"></script>
 
 {% endblock content %}
