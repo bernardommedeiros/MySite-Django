@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'energy_bill',
     'bank_loan',
     'study_schedule',
-     'tailwind',
-     'theme',
 ]
 
 MIDDLEWARE = [
